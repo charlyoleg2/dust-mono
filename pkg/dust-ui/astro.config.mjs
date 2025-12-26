@@ -3,9 +3,11 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 
+const basePath = process.env.BASE_PATH;
+
 // https://astro.build/config
 export default defineConfig({
-	base: '/dust-mono',
+	base: basePath ? basePath : '/',
 	site: 'https://charlyoleg2.github.io/dust-mono/',
 	integrations: [
 		starlight({
