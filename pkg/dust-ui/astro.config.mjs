@@ -1,9 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	base: '/dust-mono',
 	site: 'https://charlyoleg2.github.io/dust-mono/',
 	integrations: [
 		starlight({
@@ -23,5 +25,6 @@ export default defineConfig({
 				},
 			],
 		}),
+		sitemap(),
 	],
 });
