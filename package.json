@@ -1,0 +1,63 @@
+{
+	"name": "dust-mono",
+	"version": "0.5.0",
+	"description": "The mono-repo for dist-lib, dist-app, dist-ui and dist-cli",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/charlyoleg2/dust-mono.git"
+	},
+	"homepage": "https://charlyoleg2.github.io/dist-mono/",
+	"author": "charlyoleg",
+	"license": "ISC",
+	"keywords": [
+		"mini-svelte-app",
+		"random-app"
+	],
+	"type": "module",
+	"workspaces": [
+		"pkg/*"
+	],
+	"scripts": {
+		"dust-lib:dev": "npm -w dust-lib run dev",
+		"dust-lib:ci": "npm -w dust-lib run ci",
+		"dust-lib:clean": "npm -w dust-lib run clean",
+		"dust-lib:version": "npm -w dust-lib version patch",
+		"dust-lib:publish": "npm -w dust-lib publish --provenance",
+		"dust-app:dev": "npm -w dust-app run dev",
+		"dust-app:ci": "npm -w dust-app run ci",
+		"dust-app:clean": "npm -w dust-app run clean",
+		"dust-app:preview": "npm -w dust-app run preview",
+		"dust-app:version": "npm -w dust-app version patch",
+		"dust-app:publish": "npm -w dust-app publish --provenance",
+		"dust-ui:ci": "npm -w dust-ui run ci",
+		"dust-ui:clean": "npm -w dust-ui run clean",
+		"dust-ui:preview": "npm -w dust-ui run preview",
+		"dust-ui:version": "npm -w dust-ui version patch",
+		"dust-uis:ci": "npm -w dust-uis run ci",
+		"dust-uis:copy_public": "npm -w dust-uis run copy_public",
+		"dust-uis:run": "npm -w dust-uis run run",
+		"dust-uis:clean": "npm -w dust-uis run clean",
+		"dust-uis:version": "npm -w dust-uis version patch",
+		"dust-uis:publish": "npm -w dust-uis publish --provenance",
+		"dust-cli:ci": "npm -w dust-cli run ci",
+		"dust-cli:run": "npm -w dust-cli run run",
+		"dust-cli:clean": "npm -w dust-cli run clean",
+		"dust-cli:version": "npm -w dust-cli version patch",
+		"dust-cli:publish": "npm -w dust-cli publish --provenance",
+		"dev": "run-p dust-lib:dev dust-app:dev",
+		"ci": "run-s dust-lib:ci dust-app:ci dust-ui:ci dust-uis:ci dust-cli:ci",
+		"clean-root": "rimraf tmp output output2",
+		"clean": "run-s clean-root dust-lib:clean dust-app:clean dust-ui:clean dust-uis:clean dust-cli:clean",
+		"preview": "run-s dust-ui:preview",
+		"run-uis": "run-s dust-uis:run",
+		"run-cli": "run-s dust-cli:run",
+		"versions": "run-s dust-lib:version dust-app:version dust-ui:version dust-uis:version dust-cli:version",
+		"gh-publish": "run-s dust-lib:publish dust-cli:publish dust-app:publish dust-uis:publish",
+		"ls-workspaces": "npm -ws exec -c pwd"
+	},
+	"devDependencies": {
+		"npm-run-all2": "^8.0.4",
+		"rimraf": "^6.1.2"
+	}
+}

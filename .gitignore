@@ -1,0 +1,5 @@
+# .gitignore of dust-mono
+node_modules
+build
+dist
+tmp
