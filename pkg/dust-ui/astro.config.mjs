@@ -4,10 +4,10 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://charlyoleg2.github.io/dust-mono/',
 	integrations: [
 		starlight({
 			title: 'Dust info and apps',
-			site: 'https://charlyoleg2.github.io/dust-mono/',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/charlyoleg2/dust-mono' }],
 			sidebar: [
 				{
