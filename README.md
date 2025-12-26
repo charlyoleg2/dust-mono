@@ -4,6 +4,8 @@ dust-mono
 Presentation
 ------------
 
+*dust-mono* provides some random mini-applications as *web-app* and as *cli*.
+
 This mono-repo contains the following npm-packages:
 - dust-lib : the universal *typescript* library providing the core functions
 - dust-app : the *svelte* component library (depending on *dust-lib*)
