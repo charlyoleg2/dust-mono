@@ -12,6 +12,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Dust info and apps',
+			logo: {src: './src/assets/dust-logo.svg'},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/charlyoleg2/dust-mono' }],
 			sidebar: [
 				{
